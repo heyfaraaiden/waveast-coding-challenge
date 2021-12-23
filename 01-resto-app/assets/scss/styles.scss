@@ -1,0 +1,176 @@
+/******************* GOOGLE FONTS *******************/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&family=Roboto:wght@300&display=swap');
+
+/********************** RESET **********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/********************* GLOBAL *********************/
+body {
+  background-color: #6259ac;
+  color: #fff;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+
+.container {
+  padding: 3rem 1rem 4rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+button {
+  padding: 10px 30px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all .3s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    display: block;
+    background-color: rgb(255, 145, 0);
+    transition: all .3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+/********************* MENU *********************/
+.menu {
+  &__subheading {
+    margin: 20px 0;
+  }
+
+  &__main-subheading {
+    width: 100%;
+    max-width: 263px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__items {
+    margin-top: 4rem;
+    display: grid;
+    gap: 4rem;
+    justify-items: center;
+  }
+
+  &__item {
+    max-width: 318px;
+  }
+
+  &__item-copy {
+    margin-top: 8px;
+  }
+
+  &__item-subheading {
+    color: #c7c4e4;
+  }
+
+  &__price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+  }
+}
+
+/**************** MEDIA QUERIES ****************/
+@media screen and (min-width: 360px) {
+  .menu {
+    &__main-subheading {
+      max-width: 384px;
+    }
+  }
+}
+
+@media screen and (min-width: 544px) {
+  h2 {
+    font-size: 48px;
+  }
+
+  .menu {
+    &__main-subheading {
+      font-size: 18px;
+      max-width: 580px;
+    }
+
+    &__items {
+      margin-top: 5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 3rem 2rem 4rem;
+    max-width: 1000px;
+  }
+
+  .menu {
+    &__main-subheading {
+      font-size: 20px;
+      max-width: 640px;
+    }
+    
+    &__items {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 3.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1114px) {
+  h2 {
+    font-size: 64px;
+  }
+
+  .container {
+    max-width: 1300px;
+  }
+
+  .menu {
+    &__items {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 6rem;
+    }
+  }
+}
